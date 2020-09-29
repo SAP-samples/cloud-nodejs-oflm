@@ -1,0 +1,8 @@
+applications:
+  - name: freight_db
+    no-route: true
+    type: hdb
+    health-check-type: process
+    memory: 128M
+    services:
+    - nodeapp_db

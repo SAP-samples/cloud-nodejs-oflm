@@ -1,0 +1,27 @@
+{
+  "welcomeFile": "ui/index.html",
+  "routes": [
+    {
+    "source": "^/productService",
+    "target": "/",
+    "destination": "product-service",
+    "scope": "$XSAPPNAME.Supplier"
+  },{
+    "source": "^/logisticsService",
+    "target": "/",
+    "destination": "logisticsService",
+    "scope": "$XSAPPNAME.Supplier"
+  },
+  {
+    "source": "^/ui/(.*)",
+    "target" :"$1",
+    "localDir": "ui/uimodule/webapp",
+    "replace": {
+      "pathSuffixes": [
+        "index.html"
+      ]
+    },
+    "scope": "$XSAPPNAME.Supplier"
+  }
+]
+}

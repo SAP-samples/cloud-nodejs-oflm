@@ -1,0 +1,21 @@
+{
+    "xsappname": "businessuser-authentication",
+    "tenant-mode": "dedicated",
+    "description": "Security profile of logistics service",
+    "authorities":["$ACCEPT_GRANTED_AUTHORITIES"],
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.Supplier",
+            "description": "Display Suppliers"
+        }
+    ],
+    "role-templates": [
+        {
+            "name": "Supplier",
+            "description": "View Suppliers",
+            "scope-references": [
+                "$XSAPPNAME.Supplier"
+            ]
+        }
+    ]
+}

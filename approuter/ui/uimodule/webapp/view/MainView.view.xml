@@ -1,0 +1,35 @@
+<mvc:View controllerName="com.sap.oflm.controller.MainView" displayBlock="true" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl">
+    <pages>
+      <Page title="{i18n>title}">
+        <content>
+          <List growing="true" growingThreshold="10" busyIndicatorDelay="500" enableBusyIndicator="true" noDataText="No orders available" items="{ordersModel>/}">
+            <headerToolbar>
+              <OverflowToolbar>
+                <Title text="Orders" level="H2" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://add" press="createNewOrder" />
+              </OverflowToolbar>
+            </headerToolbar>
+            <ObjectListItem title="{ordersModel>PRODUCTNAME}" type="Inactive" number="{
+              parts:[{path:'ordersModel>TRANSPORTATIONCHARGES'}],
+              formatOptions: {showMeasure: false}
+            }" numberUnit="{ordersModel>CURRENCYCODE}">
+              <firstStatus>
+                <ObjectStatus text="{
+                  path: 'ordersModel>LIFECYCLESTATUSCODE',
+                  formatter: '.formatter.statusFormatter'}" state="Success" />
+              </firstStatus>
+              <ObjectAttribute text="Order ID- {ordersModel>ID}" />
+              <ObjectAttribute text="Created on- {
+                path: 'ordersModel>DELIVERYDATE',
+                formatter: '.formatter.dateFormatter'}" /> 
+              <ObjectAttribute text="Weight- {ordersModel>GROSSWEIGHT} KG" />
+              <ObjectAttribute text="Created by- {ordersModel>CREATED_BY}" />
+            </ObjectListItem>
+          </List>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

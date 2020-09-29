@@ -1,0 +1,14 @@
+applications:
+  - name: logistics-service
+    path: deployment/
+    buildpacks:
+      - nodejs_buildpack
+    memory: 256M
+    command: npm run start:prod
+    random-route: true
+    services:
+      - businessuser-authentication
+      - nodeapp_db
+      - freight-manager
+    env:
+      product_service: https://product-service-exhausted-chipmunk-hi.cfapps.sap.hana.ondemand.com

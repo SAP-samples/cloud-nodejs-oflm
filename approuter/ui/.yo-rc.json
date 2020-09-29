@@ -1,0 +1,16 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "oflm",
+    "namespace": "com.sap",
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "viewname": "MainView",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": false,
+    "namespaceURI": "com/sap",
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}

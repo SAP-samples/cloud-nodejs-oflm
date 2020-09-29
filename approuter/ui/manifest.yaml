@@ -1,0 +1,6 @@
+applications:
+  - name: oflm
+    path: uimodule/
+    buildpacks:
+      - staticfile_buildpack
+    memory: 64M

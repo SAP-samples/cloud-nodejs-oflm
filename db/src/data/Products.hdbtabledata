@@ -1,0 +1,69 @@
+{
+    "format_version": 1,
+    "imports": [
+        {
+            "target_table": "Products.product",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "product.csv",
+                "has_header": false,
+                "type_config": {
+				    "delimiter": ","
+			    }
+            },
+            "import_settings": {
+                "import_columns": [
+                    "PRODUCTID",
+                    "CURRENCYCODE",
+                    "CATEGORY",
+                    "WEIGHT",
+                    "WEIGHTUNIT",
+                    "SHORTDESCRIPTION",
+                    "PRODUCTNAME",
+                    "PICTUREURL",
+                    "PRICE",
+                    "DIMENSIONWIDTH",
+                    "DIMENSIONDEPTH",
+                    "DIMENSIONHEIGHT",
+                    "DIMENSIONUNIT"
+                ]
+            },
+            "column_mappings": {
+			        "PRODUCTID":1,
+                    "CURRENCYCODE":2,
+                    "CATEGORY":3,
+                    "WEIGHT":4,
+                    "WEIGHTUNIT":5,
+                    "SHORTDESCRIPTION":6,
+                    "PRODUCTNAME":7,
+                    "PICTUREURL":8,
+                    "PRICE":9,
+                    "DIMENSIONWIDTH":10,
+                    "DIMENSIONDEPTH":11,
+                    "DIMENSIONHEIGHT":12,
+                    "DIMENSIONUNIT":13
+		}
+        },
+        {
+            "target_table": "Products.stock",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "stocks.csv",
+                "has_header": false,
+                "type_config": {
+				    "delimiter": ","
+			    }
+            },
+            "import_settings": {
+                "import_columns": [
+                    "PRODUCTID",
+                    "QUANTITY"
+                ]
+            },
+            "column_mappings": {
+			        "PRODUCTID":1,
+                    "QUANTITY":2
+		    }
+        }
+    ]
+}

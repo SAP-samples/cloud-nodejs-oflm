@@ -1,0 +1,16 @@
+applications:
+  - name: oflm-approuter
+    path: .
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    env:
+      TENANT_HOST_PATTERN: >-
+        "oflm-approuter-(.*).cfapps.sap.hana.ondemand.com"
+      destinations: >-
+        [
+        {"name": "product-service","url": "https://product-service-exhausted-chipmunk-hi.cfapps.sap.hana.ondemand.com", "forwardAuthToken":true},
+        {"name": "logisticsService","url":"https://logistics-service-chipper-grysbok-am.cfapps.sap.hana.ondemand.com", "forwardAuthToken":true}
+        ]
+    services:
+      - businessuser-authentication

@@ -1,0 +1,96 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+    <Dialog id="orderDialog" title="Create Order" showHeader="false"  stretch="true"  >
+        <subHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Title text="Create Order" level="H3"/>
+                <ToolbarSpacer/>
+                <Button  press="closeDialog" icon="sap-icon://decline"></Button>
+			</Toolbar>
+		</subHeader>
+        <NavContainer id="wizardNavContainer">
+            <Wizard id="createOrderWizard" class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="onCreateOrder">
+                <WizardStep id="ProductTypeStep" title="Select Product" validated="false">
+                    <Label text="Select Product" class="sapUiSmallMargin"></Label>
+                    <Select items="{
+                        path: 'productListModel>/',
+                        sorter: { path: 'PRODUCTNAME' }
+                    }" id="productListSelection" change="productSelected">
+                        <core:Item text="{productListModel>PRODUCTNAME}" key="{productListModel>PRODUCTID}"></core:Item>
+                    </Select>
+                </WizardStep>
+                <WizardStep id="quoteStep" validated="false" title="Request Quote" activate="additionalInfoValidation">
+                    <ObjectHeader id="selectedProductObject" icon="{productListModel>PICTUREURL}" iconDensityAware="false" iconAlt="{productListModel>PRODUCTNAME}" title="{productListModel>PRODUCTNAME}" number="{
+                        parts:[{path:'productListModel>PRICE'}],
+                        type: 'sap.ui.model.type.Currency',
+                        formatOptions: {showMeasure: false}
+                    }" class="sapUiResponsivePadding--header" numberUnit="EUR">
+                        <ObjectAttribute text="{productListModel>WEIGHT} {productListModel>WEIGHTUNIT}" />
+                        <ObjectAttribute text="{productListModel>DIMENSIONWIDTH} x {productListModel>DIMENSIONDEPTH} x {productListModel>DIMENSIONHEIGHT} {productListModel>DIMENSIONUNIT}" />
+                        <ObjectAttribute text="{productListModel>SHORTDESCRIPTION}" />
+                    </ObjectHeader>
+                    <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                        <f:content>
+    
+                            <Label text="Quantity" required="true" />
+                            <Input type="Number" width="5rem" id="quantityId"></Input>
+                            <Label text="Distance" required="true" />
+                            <Input type="Number" description="KM" width="10rem" id="distanceId"></Input>
+                            <Label text="Mode" required="true" />
+                            <ComboBox id="transportationMeans">
+                                <core:Item key="AIR" text="AIR" />
+                                <core:Item key="RAIL" text="RAIL" />
+                                <core:Item key="ROAD" text="ROAD" />
+                                <core:Item key="SHIP" text="SHIP" />
+                            </ComboBox>
+                            <Button type="Emphasized" text="Request Quote" press="onRequestQuote"></Button>
+                        </f:content>
+                    </f:SimpleForm>
+                    <VBox id="quoteBox" visible="false" alignItems="Start">
+                        <Label text="Quote Price: " class="sapUiSmallMarginBegin"/>
+                        <ObjectNumber class="sapMObjectNumberLarge" id="quotePrice"  unit="EUR" emphasized="false" state="None" />
+                    </VBox> 
+                </WizardStep>
+                <WizardStep id="OptionalInfoStep" validated="true" title="Shipment Information">
+                    <VBox class="sapUiSmallMargin">
+                        <f:SimpleForm id="addressForm" editable="true" layout="ResponsiveGridLayout" title="Delivery Details" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                            <f:content>
+                                <Label text="Contact Person" required="true" />
+                                <Input id="name" value="{shipmentModel>/person}" />
+                                <Label text="Street/No." />
+                                <Input id="street" value="{shipmentModel>/street}"></Input>
+                                <Input id="houseNumber" value="{shipmentModel>/house}">
+                                    <layoutData>
+                                        <l:GridData span="XL1 L2 M2 S4" />
+                                    </layoutData>
+                                </Input>
+                                <Label text="Phone, Email" required="true" />
+                                <Input value="{shipmentModel>/phone}" id="mobile" maxLength="10" type="Number">
+                                    <layoutData>
+                                        <l:GridData span="XL1 L2 M2 S4" />
+                                    </layoutData>
+                                </Input>
+                                <Input value="{
+                                    path : 'shipmentModel>/email',
+                                    type : '.customEMailType'
+                                }" id="email" type="Email" 	valueStateText="E-Mail must be a valid email address."/>
+                                <Label text="Country/Region"/>
+                                <ComboBox id="country" items="{
+                                    path: 'countriesModel>/Countries',
+                                    sorter: { path: 'name' }
+                                }">
+                                    <core:Item key="{countriesModel>key}" text="{countriesModel>name}" />
+                                </ComboBox>
+                                <!-- <Button text="Create Order" press="onCreateOrder" type="Accept"></Button> -->
+                            </f:content>
+                        </f:SimpleForm>
+                    </VBox>
+                </WizardStep>
+            </Wizard>
+            </NavContainer>
+        <!-- <buttons>
+            <Button text="Cancel" press="closeDialog"></Button>
+        </buttons> -->
+    </Dialog>
+
+</core:FragmentDefinition>

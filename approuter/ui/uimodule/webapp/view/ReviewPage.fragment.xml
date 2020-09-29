@@ -1,0 +1,52 @@
+<core:FragmentDefinition
+		height="100%"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:l="sap.ui.layout"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m">
+		<Page id="wizardReviewPage" showHeader="false">
+			<content>
+                <ObjectHeader id="selectedProductObjectReview" icon="{productListModel>PICTUREURL}" iconDensityAware="false" iconAlt="{productListModel>PRODUCTNAME}" title="{productListModel>PRODUCTNAME}" number="{
+                    parts:[{path:'productListModel>PRICE'}],
+                    type: 'sap.ui.model.type.Currency',
+                    formatOptions: {showMeasure: false}
+                }" class="sapUiResponsivePadding--header" numberUnit="EUR">
+                    <ObjectAttribute text="{productListModel>WEIGHT} {productListModel>WEIGHTUNIT}" />
+                    <ObjectAttribute text="{productListModel>DIMENSIONWIDTH} x {productListModel>DIMENSIONDEPTH} x {productListModel>DIMENSIONHEIGHT} {productListModel>DIMENSIONUNIT}" />
+                    <ObjectAttribute text="{productListModel>SHORTDESCRIPTION}" />
+                </ObjectHeader>
+                <HBox alignItems="Center">
+                <Label text="Quantity:" class="sapUiSmallMargin"/> 
+                <Text id="reviewQuanitity"  class="sapUiTinyMarginBegin"/>
+                </HBox>
+                <f:SimpleForm id="addressForm" editable="true" layout="ResponsiveGridLayout" title="Delivery Details" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                    <f:content>
+                        <Label text="Contact Person" />
+                        <Text text="{shipmentModel>/person}" />
+                        <Label text="Street" />
+                        <Text text="{shipmentModel>/street}"/>
+                        <Label text="Street Number" />
+                        <Text text="{shipmentModel>/house}">
+                        </Text>
+                        <Label text="Phone, Email"  />
+                        <Text text="{shipmentModel>/phone}" />
+                            <Label text="Email" />
+                        <Text text="{
+                            path : 'shipmentModel>/email'
+                        }" />
+                        <Label text="Country/Region"/>
+                        <Text text="{shipmentModel>/country}"/> 
+                       <!-- <Button text="Create Order" press="onCreateOrder" type="Accept"></Button> -->
+                    </f:content>
+                </f:SimpleForm>
+			</content>
+			<footer>
+				<Bar>
+					<contentRight>
+						<Button text="Submit" press="submitData"/>
+						<Button text="Cancel" press="closeDialog"/>
+					</contentRight>
+				</Bar>
+			</footer>
+		</Page>
+</core:FragmentDefinition>
