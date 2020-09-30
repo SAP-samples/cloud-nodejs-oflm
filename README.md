@@ -1,4 +1,6 @@
 # Outbound Freight and Logistics Management
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-nodejs-oflm)](https://api.reuse.software/info/github.com/SAP-samples/cloud-nodejs-oflm)
+
 ## Description
 This is a sample application that showcases how to build a secure cloud-native Node.js application. The application is secured using the SAP Cloud Platform Cloud Foundry environment [Authorization and Trust Management Service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6373bb7a96114d619bfdfdc6f505d1b9.html). The current scope of the application is to showcase the following capabilities of the Authorization and Trust Management service. 
 - Authentication and authorization of users
