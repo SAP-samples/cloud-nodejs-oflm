@@ -44,7 +44,7 @@ There are three services involved here.
 - The freight manager acts as an external vendor, who provides quotes for shipment, and once the order is placed, the shipment is taken care of by the freight-manager.  The communication between freight and logistics service represents technical user authentication. 
 
 ## Architecture
-![Solution Diagram](images/solutiondiagram.png)
+![Solution Diagram](images/solutiondiagram_updated.png)
 
 In the solution diagram we have the following components: 
 - Product Service
