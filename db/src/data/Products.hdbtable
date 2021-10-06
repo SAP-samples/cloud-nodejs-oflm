@@ -1,0 +1,17 @@
+COLUMN TABLE "Products.product" ( 
+  PRODUCTID          VARCHAR(40) ,
+            PRODUCTNAME        VARCHAR(40) ,
+            CURRENCYCODE       VARCHAR(3) ,
+            CATEGORY           VARCHAR(40) ,
+            WEIGHT            Decimal(13,2) ,
+            WEIGHTUNIT         VARCHAR(3) ,
+            SHORTDESCRIPTION   VARCHAR(200) ,
+            PICTUREURL         VARCHAR(255) ,
+            PRICE             Decimal(23,3) ,
+            DIMENSIONWIDTH    Decimal(13,4) ,
+            DIMENSIONDEPTH    Decimal(13,4) ,
+            DIMENSIONHEIGHT   Decimal(13,4) ,
+            DIMENSIONUNIT      VARCHAR(3) ,
+   PRIMARY KEY ("PRODUCTID"));
+
+                  

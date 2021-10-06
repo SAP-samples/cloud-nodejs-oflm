@@ -1,6 +1,6 @@
 applications:
   - name: freight-manager
-    path: .
+    path: deployment/
     buildpacks:
       - nodejs_buildpack
     memory: 256M

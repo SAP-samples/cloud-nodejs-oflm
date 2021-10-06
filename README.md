@@ -1,8 +1,6 @@
 # Outbound Freight and Logistics Management
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-nodejs-oflm)](https://api.reuse.software/info/github.com/SAP-samples/cloud-nodejs-oflm)
-
 ## Description
-This is a sample application that showcases how to build a secure cloud-native Node.js application. The application is secured using the SAP Business Technology Platform Cloud Foundry environment [Authorization and Trust Management Service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6373bb7a96114d619bfdfdc6f505d1b9.html). The current scope of the application is to showcase the following capabilities of the Authorization and Trust Management service. 
+This is a sample application that showcases how to build a secure cloud-native Node.js application. The application is secured using the SAP Cloud Platform Cloud Foundry environment [Authorization and Trust Management Service](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6373bb7a96114d619bfdfdc6f505d1b9.html). The current scope of the application is to showcase the following capabilities of the Authorization and Trust Management service. 
 - Authentication and authorization of users
 - Secured service-to-service communications by propagating a business user
 - Secured service-to-service communication using a technical user
@@ -27,7 +25,7 @@ These features are showcased through an Outbound Freight and Logistics Managemen
   - [Implementing Authentication and Authorization](#implementing-authentication-and-authorization)
     - [Service-to-service communications by propagating a business user](#service-to-service-communications-by-propagating-a-business-user)
     - [Service-to-service communication using a technical user](#service-to-service-communication-using-a-technical-user-1)
-  - [Deploying the application on SAP Business Technology Platform Cloud Foundry Environment](#deploying-the-application-on-sap-cloud-platform-cloud-foundry-environment)
+  - [Deploying the application on SAP Cloud Platform Cloud Foundry Environment](#deploying-the-application-on-sap-cloud-platform-cloud-foundry-environment)
     - [Deploying the applications](#deploying-the-applications)
       - [Deployment Using Manifest](#deployment-using-manifest)
       - [Deployment using MTA](#deployment-using-mta)
@@ -44,7 +42,7 @@ There are three services involved here.
 - The freight manager acts as an external vendor, who provides quotes for shipment, and once the order is placed, the shipment is taken care of by the freight-manager.  The communication between freight and logistics service represents technical user authentication. 
 
 ## Architecture
-![Solution Diagram](images/solutiondiagram_updated.png)
+![Solution Diagram](images/solutiondiagram.PNG)
 
 In the solution diagram we have the following components: 
 - Product Service
@@ -61,7 +59,7 @@ This service communicates securely with the Product Service (using business user
 
 ### External Freight Manager
 This is a service external to the application which is used to calculate the shipment costs using a simple logic.
-This service is also used in showcasing the app-to-app communication between two microservices deployed in the same subaccount, but bounded to two different Authorization and Trust Management services. For more information, see referencing the application in the documentation for SAP Business Technology Platform.
+This service is also used in showcasing the app-to-app communication between two microservices deployed in the same subaccount, but bounded to two different Authorization and Trust Management services. For more information, see referencing the application in the documentation for SAP Cloud Platform.
 
 ### Authorization and Trust Management in the Cloud Foundry Environment
 The global account and subaccounts get their users from identity providers. Administrators make sure that users can only access their dedicated subaccount by making sure that there is a dedicated trust relationship only between the identity providers and the respective subaccounts. Developers configure and deploy application-based security artifacts containing authorizations, and administrators assign these authorizations using the cockpit. [Read More](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6373bb7a96114d619bfdfdc6f505d1b9.html)
@@ -79,7 +77,7 @@ SAP HANA is a high-performance in-memory database that accelerates data-driven, 
     ```
   The SAP Cloud SDK supports you end-to-end when developing applications that communicate with SAP solutions and services such as SAP S/4HANA Cloud, SAP SuccessFactors, and many others.
 
-  Using the SDK, you can reduce your effort when developing an application on SAP Business Technology Platform by building on best practices delivered by the SDK. The SDK can provide JavaScript libraries and project templates.
+  Using the SDK, you can reduce your effort when developing an application on SAP Cloud Platform by building on best practices delivered by the SDK. The SDK can provide JavaScript libraries and project templates.
 
   To create such an application, it provides a command-line interface, that allows you to scaffold or enhance an application with the missing parts. To use the SDK: [Read More](https://sap.github.io/cloud-sdk/docs/js/getting-started/)
 
@@ -90,18 +88,18 @@ SAP HANA is a high-performance in-memory database that accelerates data-driven, 
 
 - The [Nest CLI](https://docs.nestjs.com/cli/usages) is a powerful tool and can help you create new controllers, modules and interfaces.
 
-- SAP Business Technology Platform Subaccount with the following entitlements
+- SAP Cloud Platform Subaccount with the following entitlements
 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| SAP Hana Service                  | 64standard |          1          |
+| SAP Hana Cloud                    | 64standard |          1          |
 | Application Runtime               |            |          1          |
 
 
 ## Security Implementation
 
-The security implementation in the application is done using the Node-security libraries, which can be integrated with the SAP Business Technology Platform Authorization and Trust Management service as described [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4902b6e66cbd42648b5d9eaddc6a363d.html). This application implements app-to-app communication so that two microservices can securely communicate with each other. This application showcases how to implement secure communication in two  different ways:
+The security implementation in the application is done using the Node-security libraries, which can be integrated with the SAP Cloud Platform Authorization and Trust Management service as described [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4902b6e66cbd42648b5d9eaddc6a363d.html). This application implements app-to-app communication so that two microservices can securely communicate with each other. This application showcases how to implement secure communication in two  different ways:
 
 - Service communications by propagating a business user
 - Service-to-service communication using a technical user
@@ -168,7 +166,7 @@ The business user authentication code snippet can be found at the following [lin
  
  4. The logistics-service accepts the granted authorities. This is achieved by the property **"$ACCEPT_GRANTED_AUTHORITIES"** in the xs-security.json. This ensures that the freightmanager-service trusts the logistics-service and hence technical user communication between the two services is achieved using client credentials flow.
  
- For more information, refer to section [referencing the application](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html#loio517895a9612241259d6941dbf9ad81cb__section_fm2_wsk_pdb) in the documentation for SAP Business Technology Platform.
+ For more information, refer to section [referencing the application](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html#loio517895a9612241259d6941dbf9ad81cb__section_fm2_wsk_pdb) in the documentation for SAP Cloud Platform.
 
 **Code snippet of implementation**
 In `xs-security.json` under `security-config` folder, the following line is added for establishing trust:
@@ -220,7 +218,7 @@ The credentials are then used for generating a bearer token which is used for au
 The implementaion in project can be found [here](/logistics-service/src/logistics/quote.service.ts)
 
 
-## Deploying the application on SAP BTP Cloud Foundry Environment
+## Deploying the application on SAP Cloud Platform Cloud Foundry Environment
 
 1. Clone the application.
 2. Ensure you have cloud foundry CLI installed by typing `cf` in your command-prompt.
@@ -245,7 +243,7 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
     ```
     cf create-service xsuaa application businessuser-authentication -c xs-security.json
     ```
-8. Navigate to your SAP Business Technology Platform subaccount and open your development space.
+8. Navigate to your SAP Cloud Platform subaccount and open your development space.
 9. For HANA Database instance  creation, follow the [documentation](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html).
 10. Get the database ID using the following command.
     ```
@@ -267,7 +265,7 @@ For deployment, we have two options:
     ```
     npm run deploy
     ```
-2. Go to your SAP Business Technology platform subaccount and navigate to the space where you are deploying the applications. 
+2. Go to your SAP Cloud platform subaccount and navigate to the space where you are deploying the applications. 
 4. Go to `Service Marketplace` and select `Destination`.
 5. Go to Instances under destination and create a new instance.
 6. Select plan `lite` and give it the name `freight-manager`.
@@ -359,7 +357,7 @@ Here's what the swagger definition looks like:
 
 ## How to Obtain Support
 
-In case you find a bug, or you need additional support, please [open an issue](https://github.com/SAP-samples/cloud-nodejs-oflm/issues/new) here in GitHub.
+In case you find a bug, or you need additional support, please open an issue here in GitHub.
 
 ## License
-Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.
+Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSES/Apache-2.0.txt) file.

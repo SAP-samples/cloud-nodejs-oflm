@@ -8,10 +8,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^2.6.0",
-    "qs": "^6.9.3"
+    "node-fetch": "^2.6.1",
+    "qs": "^6.10.1"
   },
   "devDependencies": {
-    "jest": "^25.2.2"
+    "jest": "^27.0.6"
   }
 }
