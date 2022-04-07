@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "shx": "^0.3.4",
-    "@ui5/cli": "^2.14.6",
+    "@ui5/cli": "^2.14.7",
     "ui5-middleware-livereload": "^0.5.9",
     "karma": "^6.3.17",
     "karma-chrome-launcher": "^3.1.1",
