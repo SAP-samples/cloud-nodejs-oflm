@@ -34,6 +34,7 @@ These features are showcased through an Outbound Freight and Logistics Managemen
   - [Demo Script](#demo-script)
   - [Swagger](#swagger)
   - [Known Issues](#known-issues)
+  - [Contributing](#contributing)
   - [How to Obtain Support](#how-to-obtain-support)
   - [License](#license)
 
@@ -356,6 +357,8 @@ Here's what the swagger definition looks like:
 - `404`/not-found in logs or UI
     > Ensure that you have correctly mentioned `product-service` URL in `logistics-service`. Ensure you have the correct URL in the destination service. Ensure the application router has the correct URL.
 
+## Contributing
+If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 
 ## How to Obtain Support
 
