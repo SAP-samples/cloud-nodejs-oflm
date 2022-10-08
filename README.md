@@ -257,13 +257,8 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
     ```
       cf push
     ```
-
-### Deploying the applications 
-For deployment, we have two options:
-1. Deploy using Manifest.
-2. Deploy using MTA.
-
-#### Deployment Using Manifest
+    
+#### Deploying the applications Using Manifest
 1. Go to the root directory of `freight-manager` and deploy it using the command:
     ```
     npm run deploy
@@ -299,8 +294,6 @@ For deployment, we have two options:
 20. From the Dropdown, select **Supplier roles**.
 21. Goto **Users > +** and add your user.
 22. Now launch the application and you are good to go.
-
-#### Deployment using MTA
 
 ## Demo Script
 
