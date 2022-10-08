@@ -247,7 +247,7 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
     cf create-service xsuaa application businessuser-authentication -c xs-security.json
     ```
 8. Navigate to your SAP Business Technology Platform subaccount and open your development space.
-9. For HANA Database instance  creation, follow the [documentation](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html).
+9. For HANA Database instance  creation, follow the [documentation](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/921f3e46247947779d69b8c85c9b9985.html).
 10. Get the database ID using the following command.
     ```
      cf service <hana_db_instance_name> --guid
