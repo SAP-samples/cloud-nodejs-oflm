@@ -1,0 +1,7 @@
+COLUMN TABLE "Products.stock" ( 
+  PRODUCTID VARCHAR(40) NOT NULL,
+  QUANTITY INTEGER,
+  PRIMARY KEY(PRODUCTID)
+);
+
+                  

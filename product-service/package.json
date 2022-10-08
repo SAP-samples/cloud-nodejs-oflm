@@ -1,97 +1,96 @@
 {
-  "name": "product-service",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
-  "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "deploy": "npm run build && sap-cloud-sdk package && cf push",
-    "ci-build": "npm run build",
-    "ci-package": "sap-cloud-sdk package --ci",
-    "ci-integration-test": "jest --ci --config ./test/jest-e2e.json",
-    "ci-backend-unit-test": "jest --ci"
-  },
-  "dependencies": {
-    "@nestjs/common": "^8.4.0",
-    "@nestjs/core": "^7.5.5",
-    "@nestjs/platform-express": "^7.5.5",
-    "@nestjs/swagger": "^5.0.8",
-    "@sap-cloud-sdk/core": "^1.54.0",
-    "@sap/hdbext": "^7.3.1",
-    "@sap/xsenv": "^3.1.1",
-    "@sap/xssec": "^3.2.7",
-    "passport": "^0.5.0",
-    "reflect-metadata": "^0.1.13",
-    "rimraf": "^3.0.2",
-    "rxjs": "^7.3.1",
-    "swagger-ui-express": "^4.1.6"
-  },
-  "devDependencies": {
-    "@compodoc/compodoc": "^1.1.15",
-    "@nestjs/cli": "^8.1.2",
-    "@nestjs/schematics": "^8.0.3",
-    "@nestjs/testing": "^7.5.5",
-    "@sap-cloud-sdk/test-util": "^1.49.0",
-    "@types/express": "^4.17.13",
-    "@types/jest": "27.0.2",
-    "@types/node": "^16.10.3",
-    "@types/supertest": "^2.0.11",
-    "@typescript-eslint/eslint-plugin": "3.0.2",
-    "@typescript-eslint/parser": "3.0.2",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.20.1",
-    "jest": "27.2.4",
-    "jest-junit": "^13.0.0",
-    "prettier": "^1.19.1",
-    "supertest": "^4.0.2",
-    "ts-jest": "27.0.5",
-    "ts-loader": "^9.2.6",
-    "ts-node": "^10.2.1",
-    "tsconfig-paths": "^3.11.0",
-    "typescript": "^4.3.5"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+    "name": "product-service",
+    "version": "0.0.1",
+    "description": "",
+    "author": "",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "nest build",
+        "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+        "start": "nest start",
+        "start:dev": "nest start --watch",
+        "start:debug": "nest start --debug --watch",
+        "start:prod": "node dist/main",
+        "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:cov": "jest --coverage",
+        "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+        "test:e2e": "jest --config ./test/jest-e2e.json",
+        "deploy": "npm run build && sap-cloud-sdk package && cf push",
+        "ci-build": "npm run build",
+        "ci-package": "sap-cloud-sdk package --ci",
+        "ci-integration-test": "jest --ci --config ./test/jest-e2e.json",
+        "ci-backend-unit-test": "jest --ci"
     },
-    "coverageDirectory": "../s4hana_pipeline/reports/coverage-reports/backend-unit",
-    "testEnvironment": "node",
-    "reporters": [
-      "default",
-      [
-        "jest-junit",
-        {
-          "suiteName": "backend unit tests",
-          "outputDirectory": "./s4hana_pipeline/reports/backend-unit"
-        }
-      ]
-    ],
-    "collectCoverage": true,
-    "coverageReporters": [
-      "text",
-      "cobertura"
-    ]
-  }
+    "dependencies": {
+        "@nestjs/common": "^9.1.4",
+        "@nestjs/core": "^9.1.4",
+        "@nestjs/platform-express": "^9.1.4",
+        "@nestjs/swagger": "^6.1.2",
+        "@sap-cloud-sdk/core": "^1.54.2",
+        "@sap/hdbext": "^7.6.6",
+        "@sap/xsenv": "^3.3.2",
+        "@sap/xssec": "^3.2.13",
+        "passport": "^0.6.0",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.2",
+        "rxjs": "^7.3.1",
+        "swagger-ui-express": "^4.1.6"
+    },
+    "devDependencies": {
+        "@compodoc/compodoc": "^1.1.15",
+        "@nestjs/cli": "^9.1.4",
+        "@nestjs/schematics": "^9.0.3",
+        "@nestjs/testing": "^9.1.4",
+        "@sap-cloud-sdk/test-util": "^2.9.0",
+        "@types/express": "^4.17.13",
+        "@types/jest": "27.0.2",
+        "@types/node": "^16.10.3",
+        "@types/supertest": "^2.0.11",
+        "@typescript-eslint/eslint-plugin": "3.0.2",
+        "@typescript-eslint/parser": "3.0.2",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.20.1",
+        "jest": "27.2.4",
+        "jest-junit": "^13.0.0",
+        "prettier": "^1.19.1",
+        "supertest": "^4.0.2",
+        "ts-jest": "27.0.5",
+        "ts-loader": "^9.2.6",
+        "ts-node": "^10.2.1",
+        "tsconfig-paths": "^3.11.0",
+        "typescript": "^4.3.5"
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json",
+            "ts"
+        ],
+        "rootDir": "src",
+        "testRegex": ".spec.ts$",
+        "transform": {
+            "^.+\\.(t|j)s$": "ts-jest"
+        },
+        "coverageDirectory": "../s4hana_pipeline/reports/coverage-reports/backend-unit",
+        "testEnvironment": "node",
+        "reporters": [
+            "default", [
+                "jest-junit",
+                {
+                    "suiteName": "backend unit tests",
+                    "outputDirectory": "./s4hana_pipeline/reports/backend-unit"
+                }
+            ]
+        ],
+        "collectCoverage": true,
+        "coverageReporters": [
+            "text",
+            "cobertura"
+        ]
+    }
 }
