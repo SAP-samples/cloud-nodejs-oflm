@@ -96,8 +96,8 @@ SAP HANA is a high-performance in-memory database that accelerates data-driven, 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| SAP Hana Cloud                    | 64standard |          1          |
-| Application Runtime               |            |          1          |
+| SAP Hana Cloud                    | hana       |          1          |
+| Cloud Foundry Runtime             | MEMORY     |          1          |
 
 
 ## Security Implementation

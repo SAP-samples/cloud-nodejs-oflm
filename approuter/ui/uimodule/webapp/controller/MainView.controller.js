@@ -125,7 +125,7 @@ sap.ui.define([
                 var url = "/logisticsService/getQuote?mode=" + transportationMeans + "&productId=" + object.PRODUCTID + "&quantity=" +
                     quantity + "&totalDistanceMeasured=" + distance + "&weight=" + weight + "&dimension=" + object.DIMENSIONDEPTH + "," + object.DIMENSIONHEIGHT + "," + object.DIMENSIONWIDTH;
                 this.ajaxCalls(url, "Get").then(function(data, res) {
-                    if (data === "undefined") {
+                    if (res === "nocontent" || data == undefined) {
                         that.getView().setBusy(false);
                         MessageBox.error("Product Out of Stock. Please try with less quantity");
                     } else {
