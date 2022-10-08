@@ -29,12 +29,12 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
+  //HANA middleware
+  app.use(hana.middleware(hanacreds));
+  
   //security middleware
   app.use(passport.initialize());
   app.use(passport.authenticate('JWT', { session: false }));
-
-  //HANA middleware
-  app.use(hana.middleware(hanacreds));
 
   await app.listen(process.env.PORT || 3000);
 }

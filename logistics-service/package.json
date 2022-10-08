@@ -1,17 +1,18 @@
 {
     "author": "",
     "dependencies": {
-        "@nestjs/common": "^8.4.6",
-        "@nestjs/core": "^7.5.5",
-        "@nestjs/platform-express": "^7.5.5",
-        "@nestjs/swagger": "^5.0.8",
+        "@nestjs/axios": "^0.1.0",
+        "@nestjs/common": "^9.1.4",
+        "@nestjs/core": "^9.1.4",
+        "@nestjs/platform-express": "^9.1.4",
+        "@nestjs/swagger": "^6.1.2",
         "@sap-cloud-sdk/core": "^1.54.2",
-        "@sap/hdbext": "^7.3.1",
-        "@sap/xsenv": "^3.1.1",
-        "@sap/xssec": "^3.2.2",
+        "@sap/hdbext": "^7.6.6",
+        "@sap/xsenv": "^3.3.2",
+        "@sap/xssec": "^3.2.13",
         "axios": "^0.22.0",
         "class-validator": "^0.13.1",
-        "passport": "^0.4.1",
+        "passport": "^0.6.0",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.2",
         "rxjs": "^7.3.0",
@@ -20,10 +21,10 @@
     },
     "description": "",
     "devDependencies": {
-        "@nestjs/cli": "^8.1.2",
-        "@nestjs/schematics": "^8.0.3",
-        "@nestjs/testing": "^7.5.5",
-        "@sap-cloud-sdk/test-util": "^1.49.0",
+        "@nestjs/cli": "^9.1.4",
+        "@nestjs/schematics": "^9.0.3",
+        "@nestjs/testing": "^9.1.4",
+        "@sap-cloud-sdk/test-util": "^2.9.0",
         "@types/express": "^4.17.13",
         "@types/jest": "27.0.1",
         "@types/node": "^16.7.2",
@@ -56,8 +57,7 @@
             "ts"
         ],
         "reporters": [
-            "default",
-            [
+            "default", [
                 "jest-junit",
                 {
                     "outputDirectory": "./s4hana_pipeline/reports/backend-unit",

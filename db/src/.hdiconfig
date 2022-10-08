@@ -1,158 +1,163 @@
 {
-    "plugin_version" : "2.0.10.0",
-    "file_suffixes" : {
-        "hdbsynonym" : {
-            "plugin_name" : "com.sap.hana.di.synonym"
+    "file_suffixes": {
+        "csv": {
+            "plugin_name": "com.sap.hana.di.tabledata.source"
         },
-        "hdbsynonymconfig" : {
-            "plugin_name" : "com.sap.hana.di.synonym.config"
+        "hdbafllangprocedure": {
+            "plugin_name": "com.sap.hana.di.afllangprocedure"
         },
-        "hdbtable" : {
-            "plugin_name" : "com.sap.hana.di.table"
+        "hdbanalyticprivilege": {
+            "plugin_name": "com.sap.hana.di.analyticprivilege"
         },
-        "hdbdropcreatetable" : {
-            "plugin_name" : "com.sap.hana.di.dropcreatetable"
+        "hdbcalculationview": {
+            "plugin_name": "com.sap.hana.di.calculationview"
         },
-        "hdbvirtualtable" : {
-            "plugin_name" : "com.sap.hana.di.virtualtable"
+        "hdbcds": {
+            "plugin_name": "com.sap.hana.di.cds"
         },
-        "hdbvirtualtableconfig" : {
-            "plugin_name" : "com.sap.hana.di.virtualtable.config"
+        "hdbcollection": {
+            "plugin_name": "com.sap.hana.di.collection"
         },
-        "hdbindex" : {
-            "plugin_name" : "com.sap.hana.di.index"
+        "hdbconstraint": {
+            "plugin_name": "com.sap.hana.di.constraint"
         },
-        "hdbfulltextindex" : {
-            "plugin_name" : "com.sap.hana.di.fulltextindex"
+        "hdbdropcreatetable": {
+            "plugin_name": "com.sap.hana.di.dropcreatetable"
         },
-        "hdbconstraint" : {
-            "plugin_name" : "com.sap.hana.di.constraint"
+        "hdbflowgraph": {
+            "plugin_name": "com.sap.hana.di.flowgraph"
         },
-        "hdbtrigger" : {
-            "plugin_name" : "com.sap.hana.di.trigger"
+        "hdbfulltextindex": {
+            "plugin_name": "com.sap.hana.di.fulltextindex"
         },
-        "hdbstatistics" : {
-            "plugin_name" : "com.sap.hana.di.statistics"
+        "hdbfunction": {
+            "plugin_name": "com.sap.hana.di.function"
         },
-        "hdbview" : {
-            "plugin_name" : "com.sap.hana.di.view"
+        "hdbgraphworkspace": {
+            "plugin_name": "com.sap.hana.di.graphworkspace"
         },
-        "hdbcalculationview" : {
-            "plugin_name" : "com.sap.hana.di.calculationview"
+        "hdbhadoopmrjob": {
+            "plugin_name": "com.sap.hana.di.virtualfunctionpackage.hadoop"
         },
-        "hdbprojectionview" : {
-            "plugin_name" : "com.sap.hana.di.projectionview"
+        "hdbindex": {
+            "plugin_name": "com.sap.hana.di.index"
         },
-        "hdbprojectionviewconfig" : {
-            "plugin_name" : "com.sap.hana.di.projectionview.config"
+        "hdblibrary": {
+            "plugin_name": "com.sap.hana.di.library"
         },
-        "hdbresultcache" : {
-            "plugin_name" : "com.sap.hana.di.resultcache"
+        "hdbmigrationtable": {
+            "plugin_name": "com.sap.hana.di.table.migration"
         },
-        "hdbcds" : {
-            "plugin_name" : "com.sap.hana.di.cds"
+        "hdbprocedure": {
+            "plugin_name": "com.sap.hana.di.procedure"
         },
-        "hdbfunction" : {
-            "plugin_name" : "com.sap.hana.di.function"
+        "hdbprojectionview": {
+            "plugin_name": "com.sap.hana.di.projectionview"
         },
-        "hdbvirtualfunction" : {
-            "plugin_name" : "com.sap.hana.di.virtualfunction"
+        "hdbprojectionviewconfig": {
+            "plugin_name": "com.sap.hana.di.projectionview.config"
         },
-        "hdbvirtualfunctionconfig" : {
-            "plugin_name" : "com.sap.hana.di.virtualfunction.config"
+        "hdbreptask": {
+            "plugin_name": "com.sap.hana.di.reptask"
         },
-        "hdbhadoopmrjob" : {
-            "plugin_name" : "com.sap.hana.di.virtualfunctionpackage.hadoop"
+        "hdbresultcache": {
+            "plugin_name": "com.sap.hana.di.resultcache"
         },
-        "jar" : {
-            "plugin_name" : "com.sap.hana.di.virtualfunctionpackage.hadoop"
+        "hdbrole": {
+            "plugin_name": "com.sap.hana.di.role"
         },
-        "hdbtabletype" : {
-            "plugin_name" : "com.sap.hana.di.tabletype"
+        "hdbroleconfig": {
+            "plugin_name": "com.sap.hana.di.role.config"
         },
-        "hdbprocedure" : {
-            "plugin_name" : "com.sap.hana.di.procedure"
+        "hdbsearchruleset": {
+            "plugin_name": "com.sap.hana.di.searchruleset"
         },
-        "hdbvirtualprocedure" : {
-            "plugin_name" : "com.sap.hana.di.virtualprocedure"
+        "hdbsequence": {
+            "plugin_name": "com.sap.hana.di.sequence"
         },
-        "hdbvirtualprocedureconfig" : {
-            "plugin_name" : "com.sap.hana.di.virtualprocedure.config"
+        "hdbstatistics": {
+            "plugin_name": "com.sap.hana.di.statistics"
         },
-        "hdbafllangprocedure" : {
-            "plugin_name" : "com.sap.hana.di.afllangprocedure"
+        "hdbstructuredprivilege": {
+            "plugin_name": "com.sap.hana.di.structuredprivilege"
         },
-        "hdblibrary" : {
-            "plugin_name" : "com.sap.hana.di.library"
+        "hdbsynonym": {
+            "plugin_name": "com.sap.hana.di.synonym"
         },
-        "hdbsequence" : {
-            "plugin_name" : "com.sap.hana.di.sequence"
+        "hdbsynonymconfig": {
+            "plugin_name": "com.sap.hana.di.synonym.config"
         },
-        "hdbrole" : {
-            "plugin_name" : "com.sap.hana.di.role"
+        "hdbsystemversioning": {
+            "plugin_name": "com.sap.hana.di.systemversioning"
         },
-        "hdbroleconfig" : {
-            "plugin_name" : "com.sap.hana.di.role.config"
+        "hdbtable": {
+            "plugin_name": "com.sap.hana.di.table"
         },
-        "hdbstructuredprivilege" : {
-            "plugin_name" : "com.sap.hana.di.structuredprivilege"
+        "hdbtabledata": {
+            "plugin_name": "com.sap.hana.di.tabledata"
         },
-        "hdbanalyticprivilege" : {
-            "plugin_name" : "com.sap.hana.di.analyticprivilege"
+        "hdbtabletype": {
+            "plugin_name": "com.sap.hana.di.tabletype"
         },
-        "hdbtabledata" : {
-            "plugin_name" : "com.sap.hana.di.tabledata"
+        "hdbtextconfig": {
+            "plugin_name": "com.sap.hana.di.textconfig"
         },
-        "csv" : {
-            "plugin_name" : "com.sap.hana.di.tabledata.source"
+        "hdbtextdict": {
+            "plugin_name": "com.sap.hana.di.textdictionary"
         },
-        "properties" : {
-            "plugin_name" : "com.sap.hana.di.tabledata.properties"
+        "hdbtextinclude": {
+            "plugin_name": "com.sap.hana.di.textrule.include"
         },
-        "tags" : {
-            "plugin_name" : "com.sap.hana.di.tabledata.properties"
+        "hdbtextlexicon": {
+            "plugin_name": "com.sap.hana.di.textrule.lexicon"
         },
-        "hdbgraphworkspace" : {
-            "plugin_name" : "com.sap.hana.di.graphworkspace"
+        "hdbtextminingconfig": {
+            "plugin_name": "com.sap.hana.di.textminingconfig"
         },
-        "hdbflowgraph" : {
-            "plugin_name" : "com.sap.hana.di.flowgraph"
+        "hdbtextrule": {
+            "plugin_name": "com.sap.hana.di.textrule"
         },
-        "hdbreptask" : {
-            "plugin_name" : "com.sap.hana.di.reptask"
+        "hdbtrigger": {
+            "plugin_name": "com.sap.hana.di.trigger"
         },
-        "hdbsearchruleset" : {
-            "plugin_name" : "com.sap.hana.di.searchruleset"
+        "hdbview": {
+            "plugin_name": "com.sap.hana.di.view"
         },
-        "hdbtextconfig" : {
-            "plugin_name" : "com.sap.hana.di.textconfig"
+        "hdbvirtualfunction": {
+            "plugin_name": "com.sap.hana.di.virtualfunction"
         },
-        "hdbtextdict" : {
-            "plugin_name" : "com.sap.hana.di.textdictionary"
+        "hdbvirtualfunctionconfig": {
+            "plugin_name": "com.sap.hana.di.virtualfunction.config"
         },
-        "hdbtextrule" : {
-            "plugin_name" : "com.sap.hana.di.textrule"
+        "hdbvirtualpackagehadoop": {
+            "plugin_name": "com.sap.hana.di.virtualpackage.hadoop"
         },
-        "hdbtextinclude" : {
-            "plugin_name" : "com.sap.hana.di.textrule.include"
+        "hdbvirtualpackagesparksql": {
+            "plugin_name": "com.sap.hana.di.virtualpackage.sparksql"
         },
-        "hdbtextlexicon" : {
-            "plugin_name" : "com.sap.hana.di.textrule.lexicon"
+        "hdbvirtualprocedure": {
+            "plugin_name": "com.sap.hana.di.virtualprocedure"
         },
-        "hdbtextminingconfig" : {
-            "plugin_name" : "com.sap.hana.di.textminingconfig"
+        "hdbvirtualprocedureconfig": {
+            "plugin_name": "com.sap.hana.di.virtualprocedure.config"
         },
-        "txt" : {
-            "plugin_name" : "com.sap.hana.di.copyonly"
+        "hdbvirtualtable": {
+            "plugin_name": "com.sap.hana.di.virtualtable"
         },
-        "hdbpublicsynonym" : {
-            "plugin_name" : "com.sap.hana.di.publicsynonym"
+        "hdbvirtualtableconfig": {
+            "plugin_name": "com.sap.hana.di.virtualtable.config"
         },
-        "hdbsysbicsynonym" : {
-        	"plugin_name"   : "com.sap.hana.di.sysbicsynonym"
+        "jar": {
+            "plugin_name": "com.sap.hana.di.virtualfunctionpackage.hadoop"
         },
-        "hdblogicalschema" : {
-        	"plugin_name"   : "com.sap.hana.di.logicalschema"
-        } 
+        "properties": {
+            "plugin_name": "com.sap.hana.di.tabledata.properties"
+        },
+        "tags": {
+            "plugin_name": "com.sap.hana.di.tabledata.properties"
+        },
+        "txt": {
+            "plugin_name": "com.sap.hana.di.copyonly"
+        }
     }
 }

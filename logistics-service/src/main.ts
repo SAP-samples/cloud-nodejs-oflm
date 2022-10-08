@@ -17,7 +17,6 @@ passport.use(new JWTStrategy(xsuaa));
 import * as hana from '@sap/hdbext';
 const hanacreds = cfServiceCredentials({ tag: 'hana' });
 
-
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   /**
@@ -30,11 +29,11 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
+  //HANA middleware
+  app.use(hana.middleware(hanacreds));
   //security 
   app.use(passport.initialize());
   app.use(passport.authenticate('JWT', { session: false }));
-  //HANA middleware
-  app.use(hana.middleware(hanacreds));
   
   await app.listen(process.env.PORT || 3000);
 }

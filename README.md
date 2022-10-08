@@ -45,7 +45,7 @@ There are three services involved here.
 - The freight manager acts as an external vendor, who provides quotes for shipment, and once the order is placed, the shipment is taken care of by the freight-manager.  The communication between freight and logistics service represents technical user authentication. 
 
 ## Architecture
-![Solution Diagram](images/solutiondiagram.PNG)
+![Solution Diagram](images/solutiondiagram_updated.png)
 
 In the solution diagram we have the following components: 
 - Product Service
@@ -96,8 +96,8 @@ SAP HANA is a high-performance in-memory database that accelerates data-driven, 
 | Service                           | Plan       | Number of Instances |
 |-----------------------------------|------------|:-------------------:|
 | SAP HANA Schemas & HDI Containers | hdi-shared |          1          |
-| SAP Hana Cloud                    | 64standard |          1          |
-| Application Runtime               |            |          1          |
+| SAP Hana Cloud                    | hana       |          1          |
+| Cloud Foundry Runtime             | MEMORY     |          1          |
 
 
 ## Security Implementation
@@ -257,13 +257,8 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
     ```
       cf push
     ```
-
-### Deploying the applications 
-For deployment, we have two options:
-1. Deploy using Manifest.
-2. Deploy using MTA.
-
-#### Deployment Using Manifest
+    
+#### Deploying the applications Using Manifest
 1. Go to the root directory of `freight-manager` and deploy it using the command:
     ```
     npm run deploy
@@ -299,8 +294,6 @@ For deployment, we have two options:
 20. From the Dropdown, select **Supplier roles**.
 21. Goto **Users > +** and add your user.
 22. Now launch the application and you are good to go.
-
-#### Deployment using MTA
 
 ## Demo Script
 

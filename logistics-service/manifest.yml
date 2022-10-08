@@ -11,4 +11,4 @@ applications:
       - nodeapp_db
       - freight-manager
     env:
-      product_service: https://product-service-exhausted-chipmunk-hi.cfapps.sap.hana.ondemand.com
+      product_service: https://product-service-accountable-toucan-pv.cfapps.eu12.hana.ondemand.com
