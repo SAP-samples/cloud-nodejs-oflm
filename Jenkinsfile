@@ -5,7 +5,7 @@ stage ('Build') {
   	 dockerExecuteOnKubernetes(script: this, dockerImage: 'ppiper/node-browsers:node12', dockerWorkspace: '/home/node') {		 
 	   sh '''
 		  	      rm -rf outbound-freight-and-logistics-management
-			      git -c http.sslVerify=false clone https://github.wdf.sap.corp/refapps/outbound-freight-and-logistics-management.git
+			      git -c http.sslVerify=false clone https://github.tools.sap/BTP-E2EScenarioValidation/outbound-freight-and-logistics-management.git
 			      cd outbound-freight-and-logistics-management
 			      cd freight-manager
 			      npm i
