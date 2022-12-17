@@ -1,31 +1,32 @@
 {
-  "name": "oflm",
-  "version": "0.0.1",
-  "scripts": {
-    "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
-    "build:ui": "run-s  build:uimodule",
-    "test": "run-s lint karma",
-    "karma-ci": "karma start karma-ci.conf.js",
-    "clearCoverage": "shx rm -rf coverage",
-    "karma": "run-s clearCoverage karma-ci",
-    "lint": "eslint .",
-    "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
-    "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --dest uimodule/dist --include-task=generateManifestBundle"
-  },
-  "devDependencies": {
-    "shx": "^0.3.4",
-    "@ui5/cli": "^2.14.9",
-    "ui5-middleware-livereload": "^0.5.9",
-    "karma": "^6.3.17",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "^2.2.0",
-    "karma-ui5": "^2.4.0",
-    "npm-run-all": "^4.1.5",
-    "eslint": "^8.10.0"
-  },
-  "ui5": {
-    "dependencies": [
-      "ui5-middleware-livereload"
-    ]
-  }
+    "name": "oflm",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
+        "build:ui": "run-s  build:uimodule",
+        "test": "run-s lint karma",
+        "karma-ci": "karma start karma-ci.conf.js",
+        "clearCoverage": "shx rm -rf coverage",
+        "karma": "run-s clearCoverage karma-ci",
+        "lint": "eslint .",
+        "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
+        "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --dest uimodule/dist --include-task=generateManifestBundle"
+    },
+    "devDependencies": {
+        "shx": "^0.3.4",
+        "@ui5/cli": "^2.14.9",
+        "ui5-middleware-livereload": "^0.5.9",
+        "karma": "^6.3.17",
+        "karma-chrome-launcher": "^3.1.1",
+        "karma-coverage": "^2.2.0",
+        "karma-ui5": "^2.4.0",
+        "npm-run-all": "^4.1.5",
+        "eslint": "^8.10.0",
+        "decode-uri-component": ">=0.2.1"
+    },
+    "ui5": {
+        "dependencies": [
+            "ui5-middleware-livereload"
+        ]
+    }
 }
