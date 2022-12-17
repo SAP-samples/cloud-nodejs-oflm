@@ -238,11 +238,11 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
    ```
    npm install
    ```
-6. Open the directory `freight-manager` in your CLI and create an xsuaa instance with the following command.
+6. Open the directory `freight-manager` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
     ```
     cf create-service xsuaa application freight-xsuaa -c xs-security.json
     ```
-7. Open the directory `security-config` in your CLI and create an xsuaa instance with the following command.
+7. Open the directory `security-config` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
     ```
     cf create-service xsuaa application businessuser-authentication -c xs-security.json
     ```
@@ -349,6 +349,15 @@ Here's what the swagger definition looks like:
     > Try deleting the `package-lock.json` and re-deploy.
 - `404`/not-found in logs or UI
     > Ensure that you have correctly mentioned `product-service` URL in `logistics-service`. Ensure you have the correct URL in the destination service. Ensure the application router has the correct URL.
+- The redirect_uri has an invalid domain.
+    > Before creating the xsuaa instance, please add the below code in the xs-security.json. Replace the eu10-004 with the region that is used.
+    ```
+    "oauth2-configuration": {
+		"redirect-uris": [
+		"https://*.cfapps.eu10-004.hana.ondemand.com/**"
+		]
+     }    
+    ```
 
 ## Contributing
 If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
