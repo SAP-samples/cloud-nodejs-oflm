@@ -127,7 +127,7 @@ The steps below describe how authentication and authorization is implemented in 
 
 As a pre prerequisite, the logistics-service and product-service should be bound to same xsuaa instance as they are part of the same application.
 
- 1. Add the [application security descriptor](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/150b04d647cd4b42835411c1787a8b11.html) file (xs-security.json) to the project.
+ 1. Add the [application security descriptor](https://help.sap.com/docs/help/400e74e560b544da92bdfe2e1afb0b39/150b04d647cd4b42835411c1787a8b11.html) file (xs-security.json) to the project.
     > This file can be found in the root folder of the project.
 
  2. Define a role **Supplier** within the application security descriptor.
