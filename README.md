@@ -238,13 +238,13 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
    ```
    npm install
    ```
-6. Open the directory `freight-manager` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
-    ```
-    cf create-service xsuaa application freight-xsuaa -c xs-security.json
-    ```
-7. Open the directory `security-config` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
+6. Open the directory `security-config` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
     ```
     cf create-service xsuaa application businessuser-authentication -c xs-security.json
+    ```
+7. Open the directory `freight-manager` in your CLI and create an xsuaa instance with the following command (If you are using the eu10-004 or any other similar regions in your subaccount, please check the Known Issues section before creating the xsuaa instances).
+    ```
+    cf create-service xsuaa application freight-xsuaa -c xs-security.json
     ```
 8. Navigate to your SAP Business Technology Platform subaccount and open your development space.
 9. For HANA Database instance  creation, follow the [documentation](https://help.sap.com/docs/HANA_CLOUD/9ae9104a46f74a6583ce5182e7fb20cb/921f3e46247947779d69b8c85c9b9985.html).
@@ -286,7 +286,7 @@ The implementaion in project can be found [here](/logistics-service/src/logistic
     npm run deploy
     ```
 14. For deploying the UI and approuter, go to the `approuter` folder. Open `manifest.yaml`. 
-15. Replace the values of `product-service` & `logistics-service` with the application URL of your deployed `product-service` and `logistics-service`. Replace the `api-endpoint` in tenant-host-pattern with the API endpoint of your subaccount. 
+15. Replace the values of `product-service` & `logistics-service` with the application URL of your deployed `product-service` and `logistics-service`. Replace the `api-endpoint` in tenant-host-pattern with the API endpoint of your subaccount and deploy the UI using the command `cf push`. 
 16. Now launch the deployed approuter application. This will return the error: `Forbidden`, since we don't have roles assigned to the user. We need to create a role collection and assign it to a user.
 17. Go to your **subaccount > Role Collections** and choose **+** to create a role collection.
 18. Give it a name. Now open it and choose **Edit**.
