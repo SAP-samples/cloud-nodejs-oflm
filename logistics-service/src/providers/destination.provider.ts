@@ -1,7 +1,7 @@
 /**
  * Exports destination service
  */
-import { useOrFetchDestination } from '@sap-cloud-sdk/core';
+import { useOrFetchDestination } from '@sap-cloud-sdk/connectivity';
 
 const destionationObject = useOrFetchDestination({ destinationName: 'freight-manager' }).then(destination => {
     return destination;

@@ -28,8 +28,20 @@ export class QuoteService {
      */
     async getFreight(authHeader: any, quantity: number, weight: number, totalDistanceMeasured: number, dimension: string, mode: string) {
         return new Promise((resolve, reject) => {
-            destination.then(destinationObject => {
-                let url = destinationObject.url + `?transportationmeans=${mode}&weight=${weight}&totalDistanceMeasured=${totalDistanceMeasured}&quantity=${quantity}&dimension=${dimension}`;
+            destination.then(async destinationObject =>{
+                var config = {
+                    method: 'get',
+                    url: destinationObject.url + '/destination-configuration/v1/subaccountDestinations',
+                    headers: { 
+                        'Authorization':'Bearer' + destinationObject.authTokens[0].value
+                    }
+                };
+                let dest = await axios(config).then(function (response) {
+                    return response.data;
+                }).catch(function (error) {
+                    reject(error);
+                });
+                let url = dest[0].URL + `?transportationmeans=${mode}&weight=${weight}&totalDistanceMeasured=${totalDistanceMeasured}&quantity=${quantity}&dimension=${dimension}`;
                 this.httpService(url, authHeader).then(data => {
                     console.log("in quote data part");
                     resolve(data.data);

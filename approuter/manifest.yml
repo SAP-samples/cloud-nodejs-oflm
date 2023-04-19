@@ -6,11 +6,11 @@ applications:
       - nodejs_buildpack
     env:
       TENANT_HOST_PATTERN: >-
-        "oflm-approuter-(.*).cfapps.eu12.hana.ondemand.com"
+        "oflm-approuter-(.*).cfapps.eu10-004.hana.ondemand.com"
       destinations: >-
         [
-        {"name": "product-service","url": "https://product-service-accountable-toucan-pv.cfapps.eu12.hana.ondemand.com", "forwardAuthToken":true},
-        {"name": "logisticsService","url":"https://logistics-service-funny-shark-wc.cfapps.eu12.hana.ondemand.com", "forwardAuthToken":true}
+        {"name": "product-service","url": "https://product-service-zany-wallaby-ns.cfapps.eu10-004.hana.ondemand.com", "forwardAuthToken":true},
+        {"name": "logisticsService","url":"https://logistics-service-exhausted-gnu-bs.cfapps.eu10-004.hana.ondemand.com", "forwardAuthToken":true}
         ]
     services:
       - businessuser-authentication
