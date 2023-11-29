@@ -41,7 +41,7 @@ These features are showcased through an Outbound Freight and Logistics Managemen
 ## Business Scenario
 This reference application shows how the conventional freight and logistics process works. 
 There are three services involved here. 
-- The product and logistics service, which showcases how two services communicate with each other securely. The logistics service checks for product availability gets the product details.  
+- The product and logistics service, which showcases how two services communicate with each other securely. The logistics service checks for product availability and gets the product details.  
 - The freight manager acts as an external vendor, who provides quotes for shipment, and once the order is placed, the shipment is taken care of by the freight-manager.  The communication between freight and logistics service represents technical user authentication. 
 
 ## Architecture
@@ -121,7 +121,7 @@ Both methods have their use cases, depending on whether or not one need to ident
 
 ## Implementing Authentication and Authorization
 
-The steps below describe how authentication and authorization is implemented in the ESPM application.
+The steps below describe how authentication and authorization is implemented in the OFLM application.
 
 ### Service-to-service communications by propagating a business user
 
