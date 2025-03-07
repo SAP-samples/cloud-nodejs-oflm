@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "cloud-nodejs-oflm"
+SPDX-PackageSupplier = "Gopal Anand (gopal.anand@sap.com)"
+SPDX-PackageDownloadLocation = "https://github.com/SAP-samples/cloud-nodejs-oflm"
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020 SAP SE or an SAP affiliate company and cloud-nodejs-oflm"
+SPDX-License-Identifier = "Apache-2.0"
